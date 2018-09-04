@@ -1,0 +1,6 @@
+name: ansible
+dependencies:
+  - python=2.7
+  - pip:
+    - ansible
+    - markupsafe

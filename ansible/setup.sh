@@ -1,16 +1,27 @@
 #!/bin/bash
-set -e
 set -o pipefail
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-if [ ! -x ./.ve/bin/ansible ]; then
-    echo "Setting up Python virtualenv containing ansible."
-    rm -rf .ve
-    virtualenv -p python2 .ve
-    .ve/bin/pip install ansible
-    .ve/bin/pip install markupsafe
+pushd conda
+
+if [ -e "environment.yml" ]; then
+    ENV=$(head -n 1 environment.yml | cut -f2 -d ' ')
+    if [[ $PATH != *$ENV* ]]; then
+      source activate $ENV
+      if [ $? -eq 0 ]; then
+        echo "'$ENV' already exists."
+      else
+        echo "'$ENV' environment is being created."
+        conda env create -q
+        source activate $ENV
+      fi
+    fi
 fi
+
+popd
+
+set -e
 
 if [ ! -x ./tls/bin/cfssl -o ! -x ./tls/bin/cfssljson ]; then
     echo "Fetching cfssl binaries" >&2
