@@ -2,8 +2,8 @@
 set -e
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-if [ ! -f terraform/local.tfvars ]; then
-    echo "You must create terraform/local.tfvars" >&2
+if [ ! -f terraform/localconf.tfvars ]; then
+    echo "You must create terraform/localconf.tfvars" >&2
     exit 1
 fi
 
@@ -16,8 +16,7 @@ terraform apply -var-file ipnett.tfvars -var-file localconf.tfvars -parallelism=
           -target openstack_networking_secgroup_rule_v2.rule_kube_lb_https_ipv4 \
           -target openstack_networking_secgroup_rule_v2.rule_kube_master_ipv4
 
-# Now, do the rest in parallell as normal
-terraform apply -var-file ipnett.tfvars -var-file local.tfvars
+terraform apply -var-file ipnett.tfvars -var-file localconf.tfvars
 terraform output inventory >../ansible/inventory
 popd
 
