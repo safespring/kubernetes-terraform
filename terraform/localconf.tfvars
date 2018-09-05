@@ -2,7 +2,8 @@ user_name = ""
 password = ""
 
 cluster_name = "demo-k8s"
-cluster_dns_domain = ""mydomain"
+cluster_dns_domain = "mydomain"
+ssh_public_key = "~/.ssh/authorized_keys"
 
 allow_ssh_from_v4 = [
     "192.168.1.0/24"

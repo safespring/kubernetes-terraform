@@ -11,5 +11,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: projectroot + "/tests", destination: "/tmp/tests"
   config.vm.provision "shell", path: "setup.sh"
   config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.ssh.insert_key = false
+  config.ssh.private_key_path = ["keys/id_rsa", "~/.vagrant.d/insecure_private_key"]
+  config.vm.provision "file", source: "keys/id_rsa.pub", destination: "~/.ssh/authorized_keys"
 end
 
