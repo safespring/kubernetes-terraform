@@ -13,8 +13,7 @@ if [ -e "environment.yml" ]; then
         echo "'$ENV' already exists."
       else
         echo "'$ENV' environment is being created."
-        conda env create -q
-        source activate $ENV
+        conda env create -q --file=environment.yml && source activate $ENV
       fi
     fi
 fi
