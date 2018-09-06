@@ -27,7 +27,9 @@ You can destroy the resources using:
 
 ```
 
-> **Tip:** You can run `terraform init` and subsequently check your setup with `terraform plan --var-file=localconf.tfvars
+> **Tip 1:** You can login to the machines via `ssh core@<ip-address> -i /home/vagrant/.ssh/id_rsa`
+
+> **Tip 2:** You can run `terraform init` and subsequently check your setup with `terraform plan --var-file=localconf.tfvars
 --var-file=ipnett.tfvars`. It is possible to bring up the bare machines with
 `terraform apply --var-file=localconf.tfvars
 --var-file=ipnett.tfvars`. The job prints out an ansible inventory at
