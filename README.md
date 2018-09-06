@@ -16,7 +16,7 @@ Navigate to the `/tmp/terraform` directory, and run the following:
 > source <openstack-tenancy-file>
 > sh keys.sh
 ```
-Now execute the main script for deploying the infra:
+Now execute the main script for deploying the infra located in `/tmp/`:
 ```bash
 > sh run_dev.sh
 
