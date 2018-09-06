@@ -5,7 +5,7 @@ This repository contains scripts and ansible playbooks for managing the PaaS 2 k
 
 ## Bringing up a test cluster
 
-Before firing up the Vagrant box, please first create a key-pair with `ssh-keygen -t rsa -b 4096 -f ./keys/id_rsa`. Once you have a key-pair, you can start the box with `vagrant up --provision`, and login via `vagrant ssh`
+Before firing up the Kubernetes cluster, you can start the box with `vagrant up --provision`, and login via `vagrant ssh`
 
 First, navigate to the `/tmp/terraform` directory, and configure the `local.tfvars`.
 
