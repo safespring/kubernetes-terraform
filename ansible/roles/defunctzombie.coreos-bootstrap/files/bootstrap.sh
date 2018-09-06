@@ -1,5 +1,4 @@
 #/bin/bash
-
 set -e
 
 cd
@@ -19,11 +18,11 @@ fi
 
 mv -n pypy-$PYPY_VERSION-linux64 pypy
 
-## library fixup
-#mkdir -p pypy/lib
-#ln -snf /lib64/libncurses.so.6.1 $HOME/pypy/lib/libtinfo.so.5
+mkdir -p pypy/lib
 
 mkdir -p $HOME/bin
+
+ln -snf /lib64/libncurses.so.6.1 $HOME/pypy/lib/libtinfo.so.5
 
 cat > $HOME/bin/python <<EOF
 #!/bin/bash

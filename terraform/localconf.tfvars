@@ -1,7 +1,7 @@
 user_name = ""
 password = ""
 
-cluster_name = "demo-k8s"
+cluster_name = "demo-k8s-test"
 cluster_dns_domain = "mydomain"
 ssh_public_key = "/home/vagrant/.ssh/id_rsa.pub"
 
