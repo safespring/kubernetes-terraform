@@ -8,7 +8,7 @@ curl -LC - -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.3
 unzip -oq /tmp/terraform.zip -d /usr/local/bin
 
 # install kubectl
-curl -LC - -o /tmp/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.11.0/bin/linux/amd64/kubectl
+curl -LC - -o /tmp/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubectl
 chmod +x /tmp/kubectl
 mv /tmp/kubectl /usr/local/bin/kubectl
 
