@@ -12,6 +12,9 @@ curl -LC - -o /tmp/kubectl https://storage.googleapis.com/kubernetes-release/rel
 chmod +x /tmp/kubectl
 mv /tmp/kubectl /usr/local/bin/kubectl
 
+# keys script privileges
+chmod +x /tmp/terraform/keys.sh
+
 # install conda
 curl -L -o /tmp/miniconda.sh https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
 chmod +x /tmp/miniconda.sh

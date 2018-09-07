@@ -10,20 +10,23 @@ Before firing up the Kubernetes cluster, you need to login to the Vagrant box:
 > vagrant up --provision
 > vagrant ssh
 ```
-Navigate to the `/tmp/terraform` directory, and run the following:
+and source your Openstack tenancy file:
+```bash
+> source <openstack-tenancy-file>
+```
+Then, navigate to the `/tmp/terraform` directory, and generate a RSA key-pair:
 ```bash
 > cd /tmp/terraform
-> source <openstack-tenancy-file>
-> sh keys.sh
+> ./keys.sh
 ```
 Now execute the main script for deploying the infra located in `/tmp/`:
 ```bash
-> sh run_dev.sh
+> ./run_dev.sh
 
 ```
 You can destroy the resources using:
 ```bash
-> sh destroy_dev.sh
+> ./destroy_dev.sh
 
 ```
 
