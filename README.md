@@ -14,12 +14,11 @@ and source your Openstack tenancy file:
 ```bash
 > source <openstack-tenancy-file>
 ```
-Then, navigate to the `/tmp/terraform` directory, and generate a RSA key-pair:
+Then, generate a RSA key-pair:
 ```bash
-> cd /tmp/terraform
-> ./keys.sh
+> ./terraform/keys.sh
 ```
-Now execute the main script for deploying the infra located in `/tmp/`:
+Now execute the main script for deploying the infra located in `/home/vagrant`:
 ```bash
 > ./run_dev.sh
 
