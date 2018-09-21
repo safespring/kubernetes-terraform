@@ -98,20 +98,7 @@ spec:
         scheduler.alpha.kubernetes.io/tolerations: '[{"key":"CriticalAddonsOnly", "operator":"Exists"}]'
     spec:
       serviceAccountName: dashboard
-      volumes:
-        - name: db-proxy-config
-          secret:
-            secretName: db-proxy-config
       containers:
-      - name: oauth-proxy
-        image: registry.uninett.no/public/goidc-proxy:latest
-        imagePullPolicy: Always
-        ports:
-          - containerPort: 80
-        volumeMounts:
-          - name: db-proxy-config
-            mountPath: /conf
-        workingDir: /conf
       - name: dashboard
         image: gcr.io/google_containers/kubernetes-dashboard-amd64:v1.8.2
         args:
