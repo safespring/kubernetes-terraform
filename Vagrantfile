@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: projectroot + "/ansible", destination: "~/ansible"
   config.vm.provision "file", source: projectroot + "/setup", destination: "~/setup"
   config.vm.provision "file", source: projectroot + "/tests", destination: "~/tests"
+  config.vm.provision "file", source: projectroot + "/extras", destination: "~/extras"
   config.vm.provision "shell", path: "setup.sh"
   config.ssh.insert_key = false
   config.vm.synced_folder ".", "/vagrant", disabled: true
