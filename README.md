@@ -10,17 +10,21 @@ Before firing up the Kubernetes cluster, you need to login to the Vagrant box:
 > vagrant up --provision
 > vagrant ssh
 ```
+
+Then, generate a RSA key-pair and setup your conda environment by first navigating to `setup`:
+```bash
+> cd setup
+> ./keys.sh
+> ./conda-env.sh
+```
+
 and source your Openstack tenancy file:
 ```bash
 > source <openstack-tenancy-file>
 ```
-Then, generate a RSA key-pair and setup your conda environment:
-```bash
-> ./setup/keys.sh
-> ./setup/conda-env.sh
-```
 Now execute the main script for deploying the infra located in `/home/vagrant`:
 ```bash
+> cd ..
 > ./run_dev.sh
 
 ```

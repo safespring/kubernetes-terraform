@@ -23,3 +23,6 @@ sh /tmp/miniconda.sh -u -b -p /opt/miniconda
 cat >> /home/vagrant/.bashrc << END
 export PATH=/usr/local/bin:/opt/miniconda/bin:$PATH
 END
+
+# windows fix
+find . -name '*.sh*' -exec chmod 755 {} +
