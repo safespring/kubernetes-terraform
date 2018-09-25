@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+ name: kubernetes-dashboard
+spec:
+ selector:
+   app: dashboard
+ ports:
+ - protocol: TCP
+   port: 80
+   targetPort: 9090
+
