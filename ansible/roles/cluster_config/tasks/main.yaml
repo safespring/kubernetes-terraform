@@ -7,11 +7,6 @@
     src: kubeconfig.j2
     dest: ./kubeconfig
     mode: 0600
-- name: Generating kubeconfig for vagrant
-  template:
-    src: kubeconfig.j2
-    dest: /home/vagrant/.kube/config/kubeconfig
-    mode: 0600
 - name: Generate calico etcd certificate & key
   command: ./tls/generate_cert.sh etcd client calico
   args:

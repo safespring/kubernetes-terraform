@@ -8,3 +8,5 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 source activate ansible
 
 ansible-playbook site.yaml
+
+cp /home/vagrant/ansible/kubeconfig /home/vagrant/.kube/config
