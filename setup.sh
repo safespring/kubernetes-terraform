@@ -1,6 +1,6 @@
 #!/bin/bash -eu
-
-yum install -y unzip vim python2-pip nc
+sudo yum groupinstall -y "Development Tools"
+sudo yum install -y unzip
 
 # install terraform
 mkdir -p ~/bin
@@ -12,8 +12,9 @@ curl -LC - -o /tmp/kubectl https://storage.googleapis.com/kubernetes-release/rel
 chmod +x /tmp/kubectl
 mv /tmp/kubectl /usr/local/bin/kubectl
 
-# keys script privileges
-chmod +x /home/vagrant/terraform/keys.sh
+# change scripts privileges
+chmod +x /home/vagrant/setup/keys.sh
+chmod +x /home/vagrant/setup/conda-env.sh
 
 # install conda
 curl -L -o /tmp/miniconda.sh https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh

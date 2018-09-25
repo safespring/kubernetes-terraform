@@ -4,3 +4,4 @@ dependencies:
   - pip:
     - ansible
     - markupsafe
+    - python-openstackclient

@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: projectroot + "/run_dev.sh", destination: "~/run_dev.sh"
   config.vm.provision "file", source: projectroot + "/destroy_dev.sh", destination: "~/destroy_dev.sh"
   config.vm.provision "file", source: projectroot + "/ansible", destination: "~/ansible"
+  config.vm.provision "file", source: projectroot + "/setup", destination: "~/setup"
   config.vm.provision "file", source: projectroot + "/tests", destination: "~/tests"
   config.vm.provision "shell", path: "setup.sh"
   config.ssh.insert_key = false

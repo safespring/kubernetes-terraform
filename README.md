@@ -14,9 +14,10 @@ and source your Openstack tenancy file:
 ```bash
 > source <openstack-tenancy-file>
 ```
-Then, generate a RSA key-pair:
+Then, generate a RSA key-pair and setup your conda environment:
 ```bash
-> ./terraform/keys.sh
+> ./setup/keys.sh
+> ./setup/conda-env.sh
 ```
 Now execute the main script for deploying the infra located in `/home/vagrant`:
 ```bash
