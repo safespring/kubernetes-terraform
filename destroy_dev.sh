@@ -9,12 +9,12 @@ fi
 
 pushd terraform
 
-terraform destroy -var-file ipnett.tfvars -var-file localconf.tfvars -parallelism=1 \
+terraform destroy -auto-approve -var-file ipnett.tfvars -var-file localconf.tfvars -parallelism=1 \
           -target openstack_networking_secgroup_rule_v2.rule_ssh_access_ipv4 \
           -target openstack_networking_secgroup_rule_v2.rule_kube_lb_http_ipv4 \
           -target openstack_networking_secgroup_rule_v2.rule_kube_lb_https_ipv4 \
           -target openstack_networking_secgroup_rule_v2.rule_kube_master_ipv4
 
-terraform destroy -var-file ipnett.tfvars -var-file localconf.tfvars
+terraform destroy -auto-approve -var-file ipnett.tfvars -var-file localconf.tfvars
 
 popd
