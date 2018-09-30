@@ -5,3 +5,4 @@ dependencies:
     - ansible
     - markupsafe
     - python-openstackclient
+    - neutron
