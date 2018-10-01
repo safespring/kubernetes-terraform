@@ -4,6 +4,7 @@ provider "openstack" {
     tenant_name = "${var.tenant_name}"
     user_name = "${var.user_name}"
     password = "${var.password}"
+    version = "1.9"
 }
 
 # SSH Key
