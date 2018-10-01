@@ -41,7 +41,8 @@ You can destroy the resources using:
 
 ```
 
-> **Note:** You can login to the machines via `ssh core@<ip-address> -i /home/vagrant/.ssh/id_rsa`
+> **Note:** You can login to the machines via `ssh core@<ip-address> -i /home/vagrant/.ssh/id_rsa`:
+
 > **Note (ii):** You can destroy the resources using:
 ```bash
 > ./destroy_dev.sh
